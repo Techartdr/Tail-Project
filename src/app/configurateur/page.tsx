@@ -4,10 +4,19 @@ import TailConfigurator from '@/components/TailConfigurator';
 import Link from 'next/link';
 import './configurateur.css';
 
+export const dynamic = 'force-dynamic';
+
+function ConfiguratorLoading() {
+  return (
+    <div style={{ textAlign: 'center', padding: '4rem', color: '#666' }}>
+      Chargement de l'atelier...
+    </div>
+  );
+}
+
 export default function ConfigurateurlPage() {
   return (
     <div className="configurateur-page-wrapper">
-
       <header className="configurateur-header">
         <div className="container">
           <h1>Configurateur de Produit</h1>
@@ -29,13 +38,11 @@ export default function ConfigurateurlPage() {
             </p>
           </div>
         </div>
-        
-        <Suspense fallback={<div style={{textAlign: 'center', padding: '2rem'}}>Chargement de l'atelier...</div>}>
+
+        <Suspense fallback={<ConfiguratorLoading />}>
            <TailConfigurator />
         </Suspense>
-        
       </div>
-
     </div>
   );
 }
