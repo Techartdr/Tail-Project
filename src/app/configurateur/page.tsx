@@ -28,13 +28,14 @@ export default function ConfigurateurlPage() {
         <div className="configurateur-alert">
           <div className="alert-icon">⚠️</div>
           <div className="alert-content">
-            <strong>PROTOTYPAGE EN COURS (ALPHA)</strong>
+            <strong>PROTOTYPAGE EN COURS</strong>
             <p>
-              Ce configurateur utilise actuellement un <strong>modèle 3D de calibration</strong>. 
-              Il sera remplacé par un modèle réaliste dès que le prototype physique sera pleinement fonctionnel.
+              Ce configurateur utilise actuellement un modèle 3D de test. 
+              Il sera remplacé par le modèle réaliste dès que le prototype physique sera pleinement fonctionnel.
             </p>
             <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>
               La prise de rendez-vous sera ouverte exclusivement une fois les phases de développement et de tests terminées.
+              Le prix indiqué sert actuellement de test, il n'est pas indicatif et n'est pas contractuel.
             </p>
           </div>
         </div>
