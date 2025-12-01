@@ -3,6 +3,8 @@ import TailConfigurator from '@/components/TailConfigurator';
 import Link from 'next/link';
 import './configurateur.css';
 
+export const dynamic = 'force-dynamic';
+
 export default function ConfigurateurlPage() {
   return (
     <div className="configurateur-page-wrapper">
