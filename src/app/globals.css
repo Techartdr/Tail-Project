@@ -1,0 +1,169 @@
+/* src/app/globals.css */
+
+/* 1. Import des Polices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* 2. Variables & Design System */
+:root {
+  /* --- Couleurs lumineuses (Fonds sombres) --- */
+  --color-primary: #d9d9d9;
+  --color-primary-hover: #ffed9c;
+  
+  /* --- Couleurs d'encre (Fonds clairs) --- */
+  --color-primary-text: #3c1400;
+  --color-secondary-text: #3b1100;
+  
+  /* --- Fonds & structure --- */
+  --color-text: #1f1f1f;
+  --color-text-subtle: #1e1e1e;
+  --color-background-paper: #f7f3e8;
+  --color-border: #5c4a42;
+  --color-dark-panel: #2a221f;
+  
+  /* Typographie */
+  --font-family-main: "Inter", sans-serif;
+  --font-family-heading: "Playfair Display", serif;
+  
+  /* Layout */
+  --container-width: 1100px;
+  --border-radius: 4px;
+}
+
+/* 3. Styles Globaux */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: clip; 
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: var(--font-family-main);
+
+  font-family: var(--font-family-main);
+  color: var(--color-text);
+  line-height: 1.6;
+
+  background-color: var(--color-background-paper);
+  background-image: url('/textures/paper-texture-seamless.jpg'); 
+  background-repeat: repeat;
+  background-attachment: fixed; 
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+/* 4. Typographie */
+h1, h2, h3, h4 {
+  font-family: var(--font-family-heading);
+  color: var(--color-primary-text); 
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+a {
+  color: var(--color-secondary-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: all 0.2s;
+}
+a:hover { 
+  color: var(--color-text); 
+  background-color: rgba(14, 116, 144, 0.1);
+}
+
+/* 5. Layout */
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none !important;
+  text-align: center;
+  
+  color: var(--color-primary) !important;
+  background-color: var(--color-dark-panel); 
+  text-shadow: 0 1px 2px #000;
+
+  border: 24px solid transparent;
+  border-image-source: url('/textures/button-frame.png');
+  border-image-slice: 24 fill; 
+  border-image-repeat: stretch;
+
+  padding: 0 10px; 
+  line-height: 24px;
+  
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+  color: var(--color-primary-hover) !important;
+  border-image-source: url('/textures/button-frame-hover.png');
+  transform: translateY(2px);
+}
+
+.card-invention, 
+.preset-card, 
+.post-list-item,
+.faq-item,
+.api-endpoint pre {
+  background-color: var(--color-background-paper);
+  border: 15px solid transparent;
+  border-image-source: url('/textures/content-card-frame.png');
+  border-image-slice: 15;
+  border-image-repeat: stretch;
+  background-clip: padding-box;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card-invention img, .preset-card img, .post-list-item img {
+  margin: -15px -15px 0 -15px;
+  width: calc(100% + 30px);
+  max-width: none;
+}
+
+.parallax-layer {
+  position: fixed;
+  top: -50px; left: -50px; right: -50px; bottom: -50px;
+  width: calc(100% + 100px);
+  height: calc(100% + 100px);
+  
+  background-image: url('/textures/paper-texture-seamless-text.png'); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  
+  opacity: 0.4; 
+  mix-blend-mode: multiply; 
+  
+  z-index: 0; 
+  pointer-events: none; 
+}
+
+main, header, footer, section {
+  position: relative;
+  z-index: 10;
+}

@@ -1,0 +1,167 @@
+/* src/app/atelier/[orderId]/atelier.css */
+.atelier-page-wrapper {
+  width: 100%;
+  padding-bottom: var(--spacing-8);
+}
+
+.atelier-header {
+  width: 100%;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+  border-bottom: 2px dashed var(--color-border);
+}
+
+.atelier-header h1 {
+  margin-top: 0;
+  font-family: var(--font-family-heading);
+  color: var(--color-primary-text);
+}
+
+.atelier-header p {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  
+  font-family: var(--font-family-heading);
+  font-style: italic;
+  line-height: 1.5;
+  
+  margin-bottom: 1.5rem;
+}
+
+.atelier-header .atelier-estimate {
+  margin-top: 1rem;
+  display: inline-block;
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  background-color: var(--color-background-paper);
+  color: var(--color-secondary-text);
+  
+  border: 2px solid var(--color-border);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: var(--shadow-sketch);
+}
+
+.atelier-content {
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+.atelier-content h2 {
+  text-align: center;
+  color: var(--color-primary-text);
+  margin-bottom: 2rem;
+}
+
+.timeline-wrapper {
+  margin-top: 2rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-border); 
+  border-radius: 2px;
+}
+
+.timeline-step {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 2rem;
+  display: flex; 
+  align-items: center; 
+  min-height: 80px;
+}
+
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-dark-panel);
+  border: 2px solid var(--color-border);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.step-content {
+  width: 100%;
+  background-color: var(--color-background-paper);
+  background-clip: padding-box;
+  
+  border: 15px solid transparent; 
+  border-image-source: url('/textures/content-card-frame.png');
+  border-image-slice: 15; 
+  border-image-repeat: stretch;
+  
+  box-shadow: var(--shadow-sketch);
+  
+  padding: 0 10px; 
+}
+
+.step-name {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.step-description {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-subtle);
+  line-height: 1.5;
+}
+
+.timeline-step.status-completed::before {
+  background: var(--color-secondary); 
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 10px rgba(217, 119, 6, 0.4);
+}
+.timeline-step.status-completed .step-name {
+  color: var(--color-secondary-text); 
+  text-decoration: line-through;
+}
+.timeline-step.status-completed .step-content {
+  opacity: 0.5;
+}
+
+.timeline-step.status-in-progress::before {
+  background: var(--color-primary); 
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 0 15px var(--color-primary);
+  transform: translateY(-50%) scale(1.2); 
+}
+.timeline-step.status-in-progress .step-name {
+  color: var(--color-primary-text); 
+}
+
+.timeline-step.status-pending::before {
+  background: var(--color-background-paper);
+  border: 2px solid var(--color-text-subtle);
+}
+.timeline-step.status-pending .step-name {
+  color: var(--color-text-subtle);
+}
+.timeline-step.status-pending .step-content {
+  opacity: 0.8;
+}
